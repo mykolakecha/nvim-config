@@ -10,8 +10,6 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
--- Load plugins from lua/plugins/init.lua
 require("lazy").setup("plugins")
 
 -- Load custom mapping
@@ -23,7 +21,7 @@ vim.cmd("syntax on")
 vim.cmd("filetype plugin on")
 vim.cmd("filetype indent on")
 
-vim.opt.guifont = "FiraCode Nerd Font:h12"
+vim.opt.guifont = "FiraCode Nerd Font:h11"
 
 vim.opt.shell = "zsh"
 vim.opt.backspace = { "indent", "eol", "start" }
@@ -56,13 +54,3 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 
--- ------------------
-
-vim.keymap.set("n", "<leader>u", function()
-  vim.lsp.buf.code_action({
-    filter = function(action)
-      return action.title:match("Import class")
-    end,
-    apply = true,
-  })
-end, { desc = "Import class under cursor", buffer = bufnr })

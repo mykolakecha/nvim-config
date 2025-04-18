@@ -24,6 +24,15 @@ return {
         -- map("n", "<leader>lf", function() vim.lsp.buf.format { async = true } end)
       end
 
+	  vim.keymap.set("n", "<leader>u", function()
+	    vim.lsp.buf.code_action({
+	      filter = function(action)
+		    return action.title:match("Import class")
+		  end,
+		  apply = true,
+	    })
+	  end, { desc = "Import class under cursor", buffer = bufnr })
+
       -- Example LSP servers
       lspconfig.lua_ls.setup({
         on_attach = on_attach,
@@ -58,7 +67,7 @@ return {
     dependencies = { "mason.nvim", "nvim-lspconfig" },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "phpactor", "html", "tsserver" },
+        ensure_installed = { "lua_ls", "phpactor", "html" },
         automatic_installation = true,
       })
     end,

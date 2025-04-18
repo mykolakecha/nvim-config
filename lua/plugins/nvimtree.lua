@@ -6,10 +6,10 @@ return {
 		  sync_root_with_cwd = true,
 		  update_focused_file = {
 			enable = true,
-			update_root = true,   -- optional: updates tree root to current working directory
+			update_root = true,
 		  },
 		  view = {
-			width = 35,
+			width = 38,
 		  },
 		  renderer = {
 			group_empty = true,
