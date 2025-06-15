@@ -33,7 +33,6 @@ return {
 	    })
 	  end, { desc = "Import class under cursor", buffer = bufnr })
 
-      -- Example LSP servers
       lspconfig.lua_ls.setup({
         on_attach = on_attach,
       })
@@ -52,7 +51,15 @@ return {
     end,
   },
 
-  -- Optional: LSP installer UI (for easier server management)
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+    config = function()
+
+    end,
+  },
+
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
@@ -61,7 +68,6 @@ return {
     end,
   },
 
-  -- Optional: Bridge Mason and LSPConfig
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "mason.nvim", "nvim-lspconfig" },

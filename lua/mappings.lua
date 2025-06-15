@@ -8,6 +8,10 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true })
 vim.keymap.set("n", "<C-Tab>", ":bn<CR>", { noremap = true })
 vim.keymap.set("n", "<C-S-Tab>", ":bp<CR>", { noremap = true })
 
+vim.keymap.set("n", "<Leader>n", ":nohl<CR>", { noremap = true })
+
+-- vim.keymap.set("n", "<C-c><C-x>", ":qa<CR>", { noremap = true })
+
 
 -- Other custom configs 
 vim.api.nvim_create_user_command("CdNc", function()

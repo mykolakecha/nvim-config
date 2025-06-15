@@ -21,7 +21,7 @@ vim.cmd("syntax on")
 vim.cmd("filetype plugin on")
 vim.cmd("filetype indent on")
 
-vim.opt.guifont = "FiraCode Nerd Font:h11"
+vim.opt.guifont = "FiraCode Nerd Font:h11.5"
 
 vim.opt.shell = "zsh"
 vim.opt.backspace = { "indent", "eol", "start" }
